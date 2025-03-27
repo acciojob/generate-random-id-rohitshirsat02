@@ -1,6 +1,18 @@
 function makeid(l) {
-  // write your code here
+  // Ensure the length is a valid number
+  l = parseInt(l, 10);
+  if (isNaN(l) || l <= 0) return "Invalid input";
+
+  var res = "";
+  var char_list = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+  for (var i = 0; i < l; i++) {
+    res += char_list.charAt(Math.floor(Math.random() * char_list.length));
+  }
+
+  return res;
 }
+
 
 // Do not change the code below.
 const l = prompt("Enter a number.");
